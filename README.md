@@ -10,8 +10,7 @@ Plugin for `Yazi` to preview all supported files via `Bat`.
 ## Installation
 
 ```sh
-$> mkdir -p ~/.config/yazi/plugins
-$> git clone https://github.com/mgumz/yazi-plugin-bat.git ~/.config/yazi/plugins/bat.yazi
+$> ya pack -a knightgu/bat-preview
 ```
 
 ## Configuration
@@ -21,17 +20,17 @@ Edit `~/.config/yazi/yazi.toml` and add `bat` as the previewer for the file type
 ```toml
 [plugin]
 prepend_previewers = [
-    { name = "*.csv", run = "bat" },
-    { name = "*.md", run = "bat" }
+    { name = "*.csv", run = "bat-preview" },
+    { name = "*.md",  run = "bat-preview" }
 ]
 
 previewers = [
 	{ name = "*/", run = "folder", sync = true },
-	{ mime = "text/*",                 run = "bat" },
-	{ mime = "*/xml",                  run = "bat" },
-	{ mime = "*/cs",                   run = "bat" },
-	{ mime = "*/javascript",           run = "bat" },
-	{ mime = "*/x-wine-extension-ini", run = "bat" },
+	{ mime = "text/*",                 run = "bat-preview" },
+	{ mime = "*/xml",                  run = "bat-preview" },
+	{ mime = "*/cs",                   run = "bat-preview" },
+	{ mime = "*/javascript",           run = "bat-preview" },
+	{ mime = "*/x-wine-extension-ini", run = "bat-preview" },
 ]
 ```
 
