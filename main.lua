@@ -2,7 +2,7 @@ local M = {}
 
 function M:peek(job)
   local child = Command("bat")
-    :args({ "--style", "plain", "--color", "always", tostring(job.file.url) })
+    :arg({ "--style", "plain", "--color", "always", tostring(job.file.url) })
     :stdout(Command.PIPED)
     :stderr(Command.PIPED)
     :spawn()
@@ -29,7 +29,7 @@ function M:peek(job)
 
   child:start_kill()
   if job.skip > 0 and i < job.skip + limit then
-    ya.mgr_emit(
+    ya.emit(
       "peek", {
         math.max(0, i - limit), only_if = job.file.url, upper_bound = true,
       }
@@ -39,7 +39,7 @@ function M:peek(job)
     ya.preview_widgets(job, {
       ui.Text.parse(lines)
         :area(job.area)
-        :wrap(rt.preview.wrap == "yes" and ui.Text.WRAP or ui.Text.WRAP_NO),
+        :wrap(rt.preview.wrap == "yes" and ui.WRAP.YES or ui.Text.WRAP.NO),
     })
   end
 end
