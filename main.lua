@@ -34,11 +34,11 @@ function M:peek(job)
     })
   else
     lines = lines:gsub("\t", string.rep(" ", rt.preview.tab_size))
-    ya.preview_widget(job, {
+    ya.preview_widget(job, 
       ui.Text.parse(lines)
         :area(job.area)
-        :wrap(rt.preview.wrap == "yes" and ui.Wrap.YES or ui.Wrap.NO),
-    })
+        :wrap(rt.preview.wrap == "yes" and ui.Wrap.YES or ui.Wrap.NO)
+    )
   end
 end
 
