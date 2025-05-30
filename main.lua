@@ -39,7 +39,7 @@ function M:peek(job)
     ya.preview_widgets(job, {
       ui.Text.parse(lines)
         :area(job.area)
-        :wrap(rt.preview.wrap == "yes" and ui.WRAP.YES or ui.Text.WRAP.NO),
+        :wrap(rt.preview.wrap == "yes" and ui.Wrap.YES or ui.Wrap.NO),
     })
   end
 end
