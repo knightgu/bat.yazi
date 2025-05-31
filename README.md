@@ -1,3 +1,6 @@
+> [!NOTE]
+> Deprecated in favor of [piper](https://github.com/yazi-rs/plugins/tree/main/piper.yazi).
+
 # bat.yazi
 
 Plugin for `Yazi` to preview all supported files via `Bat`.
@@ -10,12 +13,12 @@ Plugin for `Yazi` to preview all supported files via `Bat`.
 ## Installation
 
 ```sh
-$> ya pack -a knightgu/bat
+$> ya pkg add knightgu/bat
 ```
 
 ## Configuration
 
-Edit `~/.config/yazi/yazi.toml` and add `bat` as the previewer for the file types of your choice.
+Edit `~/.config/yazi/yazi.toml` and add `bat` as the previewer for the filetypes of your choice.
 
 ```toml
 [plugin]
